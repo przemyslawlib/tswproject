@@ -1,11 +1,12 @@
 from django.contrib import admin
 from ins.models import Snippet, Task, Instruction
+from guardian.admin import GuardedModelAdmin
 
 class TaskInline(admin.TabularInline):
     model = Task
     extra = 3
 
-class InstAdmin(admin.ModelAdmin):
+class InstAdmin(GuardedModelAdmin):
     inlines = [TaskInline]
 
 class SnippetInline(admin.TabularInline):

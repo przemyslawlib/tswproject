@@ -10,6 +10,11 @@ class Instruction(models.Model):
     
     def __unicode__(self):
         return self.title
+    
+    class Meta:
+        permissions = (
+            ('view_instruction', 'View Instruction'),
+        )
 
 class Task(models.Model):
     inst = models.ForeignKey(Instruction)
