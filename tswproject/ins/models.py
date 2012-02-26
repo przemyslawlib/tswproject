@@ -8,7 +8,7 @@ class Subject(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
     def __unicode__(self):
-        return title
+        return self.title
 
 class Instruction(models.Model):
     title = models.CharField(max_length=250)
