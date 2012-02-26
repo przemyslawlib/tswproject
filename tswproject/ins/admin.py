@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ins.models import Snippet, Task, Instruction
+from ins.models import Snippet, Task, Instruction, Subject
 from guardian.admin import GuardedModelAdmin
 
 class TaskInline(admin.TabularInline):
@@ -19,5 +19,5 @@ class TaskAdmin(admin.ModelAdmin):
 admin.site.register(Snippet)
 admin.site.register(Task, TaskAdmin)
 admin.site.register(Instruction, InstAdmin)
-
+admin.site.register(Subject)
 
