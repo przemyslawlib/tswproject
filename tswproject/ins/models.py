@@ -9,3 +9,6 @@ class Snippet(models.Model):
     name = models.CharField(max_length=50)
     language = models.CharField(max_length=20, choices=ALL_LANGUAGES)
     code = models.TextField()
+    
+    def __unicode__(self):
+        return self.name
