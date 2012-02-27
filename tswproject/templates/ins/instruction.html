@@ -1,3 +1,8 @@
+{% extends 'ins/base.html' %}
+
+{% block title %}Instruction{% endblock %}
+
+{% block content %}
 <h3>{{instruction.title}}</h3>
 
 <p>{{instruction.introduction}}</p>
@@ -16,3 +21,4 @@
 {% else %}
    <p> No tasks atached. You are lucky! </p>
 {% endif %}
+{% endblock %}

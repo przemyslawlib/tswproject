@@ -1,7 +1,9 @@
 from django.db import models
 from pygments.lexers import get_all_lexers
+from pygments.styles import get_all_styles
 
 ALL_LANGUAGES = ((item[1][0],item[0]) for item in get_all_lexers())
+ALL_STYLES = (item for item in get_all_styles())
 
 # Create your models here.
 class Subject(models.Model):

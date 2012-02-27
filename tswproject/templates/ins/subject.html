@@ -1,3 +1,8 @@
+{% extends 'ins/base.html' %}
+
+{% block title %}Subject details{% endblock %}
+
+{% block content %}
 {% if instructions_list %}
    <ul>
    {% for instruction in instructions_list %}
@@ -7,3 +12,4 @@
 {% else %}
    <p> No instructions available. </p>
 {% endif %}
+{% endblock %}

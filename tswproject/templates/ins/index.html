@@ -1,3 +1,8 @@
+{% extends "ins/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
 {% if subject_list %}
    <ul>
    {% for subject in subject_list %}
@@ -7,3 +12,4 @@
 {% else %}
    <p> No subjects available. </p>
 {% endif %}
+{% endblock %}
