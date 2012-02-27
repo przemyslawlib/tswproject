@@ -1,0 +1,8 @@
+#sidebar {background-color: #FFB573}
+#sidebar ul li {margin-left: 0;
+	padding: 3px 15px;
+	border-left: 1px solid #000;
+	list-style: none;
+        display: inline}
+#sidebar ul li form {display: inline}
+#content {background-color: #5Ec4CD}
