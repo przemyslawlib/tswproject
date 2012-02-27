@@ -1,0 +1,13 @@
+<h3>{{instruction.title}}</h3>
+
+<p>{{instruction.introduction}}</p>
+
+{% if task_list %}
+   <ul>
+   {% for instruction in instructions_list %}
+       <li><a href="/instruction/{{instruction.id}}/">{{instruction.title}}</a></li>
+   {% endfor %}
+   </ul>
+{% else %}
+   <p> No instructions available. </p>
+{% endif %}

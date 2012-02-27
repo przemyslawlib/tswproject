@@ -1,0 +1,18 @@
+<h3>{{instruction.title}}</h3>
+
+<p>{{instruction.introduction}}</p>
+
+{% if task_list %}
+   <ul>
+   {% for task, snippets in task_list %}
+       <h4>{{task.title}}</h4>
+       <p>{{task.description}}</p>
+       {% for snippet in snippets %}
+           <h5>{{snippet.name}}</h5>
+           <p>{{snippet.code|escape}}</p>
+       {% endfor %}
+   {% endfor %}
+   </ul>
+{% else %}
+   <p> No tasks atached. You are lucky! </p>
+{% endif %}

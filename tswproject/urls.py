@@ -1,15 +1,12 @@
 from django.conf.urls.defaults import patterns, include, url
+import ins
 
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'tswproject.views.home', name='home'),
-    # url(r'^tswproject/', include('tswproject.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
+    url(r'^$', 'ins.views.home'),
+    url(r'^subject/(?P<subject_id>\d+)/$', 'ins.views.subject'),
+    url(r'^instruction/(?P<instruction_id>\d+)/$', 'ins.views.instruction'),
     url(r'^admin/', include(admin.site.urls)),
 )
