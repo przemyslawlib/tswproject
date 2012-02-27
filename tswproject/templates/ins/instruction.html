@@ -14,7 +14,7 @@
        <p>{{task.description}}</p>
        {% for snippet in snippets %}
            <h5>{{snippet.name}}</h5>
-           <p>{{snippet.code|escape}}</p>
+           {% autoescape off %} <p>{{snippet.pygmented}}</p> {% endautoescape %}
        {% endfor %}
    {% endfor %}
    </ul>

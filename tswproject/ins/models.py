@@ -1,6 +1,8 @@
 from django.db import models
-from pygments.lexers import get_all_lexers
-from pygments.styles import get_all_styles
+from pygments import highlight
+from pygments.lexers import get_all_lexers, get_lexer_by_name
+from pygments.styles import get_all_styles, get_style_by_name
+from pygments.formatters import HtmlFormatter
 
 ALL_LANGUAGES = ((item[1][0],item[0]) for item in get_all_lexers())
 ALL_STYLES = (item for item in get_all_styles())
@@ -41,4 +43,8 @@ class Snippet(models.Model):
     
     def __unicode__(self):
         return self.name
-
+    
+    def pygmented(self):
+        lexer = get_lexer_by_name(self.language, stripall=True)
+        formatter = HtmlFormatter(lineos=True, cssclass="source", style='default')
+        return highlight(self.code, lexer, formatter)
