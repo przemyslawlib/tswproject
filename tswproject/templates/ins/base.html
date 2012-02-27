@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>TSW Project | {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block topbar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li>
+            <form method="post" action="{% url ins.views.logoutuser %}">
+            {% csrf_token %}
+            {{user.username}}
+            <input type="submit" value="Logout"/>
+            </form>
+            </li>
+            {% else %}
+            <li> 
+            <form method="post" action="{% url ins.views.loginuser %}">
+            {% csrf_token %}
+            Login:<input type="text" name="username" ></input>
+            Password:<input type="password" name="password"></input>
+            <input type="submit" value="Login"/>
+            </form>
+            </li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
